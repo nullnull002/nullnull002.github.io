@@ -21,7 +21,8 @@
 
 				font-family: "微软雅黑";
 
-				font-size: 20px;
+				font-size: 25px;
+				color:#E7ED9F;
 
 			}
 
@@ -33,25 +34,31 @@
 
 				margin: 100px auto;
 
-				border: 1px solid blue;
+				border: 1px solid pink;
 
 				text-align: center;
 
-				background: #65ed45;
+				background:url(images/background.jpg);
 
 				border-radius: 10px;
 
 				padding: 20px;
+display: flex;
+            justify-content: center;
+            align-items: center;
+flex-direction: column;
 
-				width: 530px;
+				height:1279px;
+				width:1239px;
 
 			}
 
 			
 
+
 			.time h3 {
 
-				font-size: 30px;
+				font-size: 40px;
 
 				text-align: center;
 
@@ -60,6 +67,8 @@
 				letter-spacing: 5px;
 
 			}
+
+			
 
 			
 
@@ -75,15 +84,14 @@
 
 				border-radius: 8px;
 
-				background: #f2f2f2;
 
 			}
 
 			
 
-			.time .even,
+			.time  .even,
 
-			.time .odd {
+			.time  .odd {
 
 				float: left;
 
@@ -95,7 +103,7 @@
 
 				margin-right: 10px;
 
-				border-radius: 8px;
+				border-radius: 0px;
 
 			}
 
@@ -103,25 +111,24 @@
 
 			.time .even {
 
-				width: 35px;
+				width: 30px;
 
-				padding: 0 20px;
+				padding: 0 5px;
 
-				background: #b34e0a;
 
-				color: #ffffff;
+				color: #FFFFFF;
 
 			}
 
 			
 
-			.time .odd {
+			.time  .odd {
 
-				width: 20px;
+				width: 30px;
+				border:0;
 
-				padding: 0 10px;
+				padding: 0 21px;
 
-				background: #ffffff;
 
 			}
 
@@ -143,24 +150,53 @@
 
 		<div class="time">
 
-			<h3>距离2021年元旦还有:</h3>
-
+			<h3>已经相识相知相恋</h3>
+			<br/>
+			
+			<b>
 			<div id="residueDays" class="even"></div>
 
-			<div class="odd">天</div>
+			<div class="odd"> 天</div>
 
 			<div id="residueHours" class="even"></div>
 
-			<div class="odd">时</div>
+			<div class="odd"> 时</div>
 
-			<div id="residueMinutes" class="even"></div>
-
-			<div class="odd">分</div>
+			<div id="residueMinutes" class="even"></div> 
+			<div style="border: none;" class="odd"> 分</div>
 
 			<div id="residueSeconds" class="even"></div>
 
-			<div class="odd" id="lastDiv">秒</div>
+			<div class="odd" id="lastDiv"> 秒</div>
+			</b>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<h3>距离下次姨妈还有</h3>
 
+<br/>
+			
+			<b>
+			<div id="residueDays1" class="even"></div>
+
+			<div class="odd"> 天</div>
+
+			<div id="residueHours1" class="even"></div>
+
+			<div class="odd"> 时</div>
+
+			<div id="residueMinutes1" class="even"></div> 
+			<div style="border: none;" class="odd"> 分</div>
+
+			<div id="residueSeconds1" class="even"></div>
+
+			<div class="odd" id="lastDiv"> 秒</div>
+			</b>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 		</div>
 
 	</body>
@@ -177,7 +213,8 @@
 
 		// 倒计时截止时间
 
-		var EndTime = new Date('2021/01/01 00:00:00');
+		var EndTime = new Date('2021/12/06 00:00:00');
+		var EndTime2 = new Date('2023/11/30 00:00:00');
 
 		// 现在的事件
 
@@ -185,7 +222,7 @@
 
 		// 时间差（时间单位：ms）
 
-		var t = EndTime.getTime() - NowTime.getTime();
+		var t = NowTime.getTime() - EndTime.getTime() ;
 
 		var d = 0;
 
@@ -209,6 +246,31 @@
 
 		}
 
+
+	var t2 =  EndTime2.getTime()  - NowTime.getTime() ;
+
+		var d2 = 0;
+
+		var h2 = 0;
+
+		var m2 = 0;
+
+		var s2 = 0;
+
+		if(t2 >= 0) {
+
+			// 向下取整
+
+			d2 = Math.floor(t2 / 1000 / 60 / 60 / 24);
+
+			h2 = Math.floor(t2 / 1000 / 60 / 60 % 24);
+
+			m2 = Math.floor(t2 / 1000 / 60 % 60);
+
+			s2 = Math.floor(t2 / 1000 % 60);
+
+		}
+
 		// 如果是一位数，前面拼接"0"
 
 		function toDouble(num) {
@@ -225,8 +287,19 @@
 
 		$("#residueSeconds").html(toDouble(s));
 
+
+
+		$("#residueDays1").html(d2);
+
+		$("#residueHours1").html(toDouble(h2));
+
+		$("#residueMinutes1").html(toDouble(m2));
+
+		$("#residueSeconds1").html(toDouble(s2));
+
 	}
 
 	setInterval(countDownTime, 1000)
 
 </script>
+
