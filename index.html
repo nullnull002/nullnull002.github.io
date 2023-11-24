@@ -59,7 +59,7 @@
     z-index: 1;
     color: black;
    opacity: 0; /* 初始透明度为 0 */
-    transition: opacity 1s; /* 添加淡入淡出过渡效果 */
+    transition: opacity 10s; /* 添加淡入淡出过渡效果 */
 
 }
 
@@ -255,10 +255,10 @@ flex-direction: column;
 	      // 如果 .active 类被添加，启动淡出效果
         if (header.classList.contains('active')) {
             setTimeout(function () {
-                header.classList.add('fadeOut');
+                header.querySelector('.content').classList.add('fadeOut');
             }, 1000); // 在淡入效果结束后延迟 1000 毫秒启动淡出效果
         } else {
-            header.classList.remove('fadeOut'); // 移除淡出效果
+            header.querySelector('.content').classList.remove('fadeOut'); // 移除淡出效果
         }
     }
 </script>
