@@ -58,8 +58,14 @@
     padding: 12px;
     z-index: 1;
     color: black;
+   animation: fadeOut 4s forwards; /* 添加动画效果 */
 }
-
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+			
 /* 添加:checked伪类，通过radio按钮或checkbox实现点击触发 */
 .header input[type="checkbox"] {
     display: none; /* 隐藏复选框 */
@@ -215,7 +221,7 @@ flex-direction: column;
 		</div> --> 
 		
 
-		<div class="header">
+		<div class="header" style="color: red;">
     <label for="toggleContent1">2023年姨妈时间</label>
     <input type="checkbox" id="toggleContent1">
     <div class="content">
