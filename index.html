@@ -66,14 +66,7 @@
     }
 }
 			
-/* 添加:checked伪类，通过radio按钮或checkbox实现点击触发 */
-.header input[type="checkbox"] {
-    display: none; /* 隐藏复选框 */
-}
 
-.header input[type="checkbox"]:checked + .content {
-    display: block; /* 当复选框被选中时，显示内容 */
-}
 			.time {
 
 				overflow: hidden;
@@ -221,9 +214,8 @@ flex-direction: column;
 		</div> --> 
 		
 
-		<div class="header" style="color: red;">
-    <label for="toggleContent1" style="color: red;">2023年姨妈时间</label>
-    <input type="checkbox" id="toggleContent1">
+		<div class="header" onclick="toggleContent(this)">
+			2023年姨妈时间
     <div class="content">
         <!-- 内容 -->
 	    11.01<br/>
@@ -239,9 +231,9 @@ flex-direction: column;
 			01.04<br/>
     </div>
 </div>
-		<div class="header">
-    <label for="toggleContent2" style="color: red;">2022年姨妈时间</label>
-    <input type="checkbox" id="toggleContent2">
+		<div class="header" onclick="toggleContent(this)">
+			2022年姨妈时间
+
     <div class="content">
         <!-- 内容 -->
 	    12.06<br/>
@@ -249,6 +241,12 @@ flex-direction: column;
 			09.17<br/>
     </div>
 </div>
+		<script>
+    function toggleContent(header) {
+        // 切换 .active 类以控制显示/隐藏
+        header.classList.toggle('active');
+    }
+</script>
 		<div class="time">
 
 			<h3>已经相识相知相恋</h3>
