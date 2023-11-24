@@ -59,7 +59,7 @@
     z-index: 1;
     color: black;
    opacity: 0; /* 初始透明度为 0 */
-    transition: opacity 10s; /* 添加淡入淡出过渡效果 */
+    transition: opacity 5s; /* 添加淡入淡出过渡效果 */
 
 }
 
@@ -67,10 +67,13 @@
         .header.active .content {
             display: block;
             opacity: 1; /* 淡入效果 */
+      animation: fadeOut 5s forwards; /* 添加淡出动画效果 */
         }
 
-        .fadeOut {
-            opacity: 0; /* 淡出效果 */
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
         }
 			
 
