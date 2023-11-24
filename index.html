@@ -32,7 +32,7 @@
 		      color:red;
 		    }
 					
-		 /* 隐藏内容 */
+/* 		 /* 隐藏内容 */
 		    .header .content {
 		      display: none;
 		      position: absolute;
@@ -46,7 +46,28 @@
 			 /* 鼠标悬停时显示内容 */
 		    .header:hover .content {
 		      display: block;
-		    }
+		    } */
+
+			/* 默认隐藏内容 */
+.header .content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    z-index: 1;
+    color: black;
+}
+
+/* 添加:checked伪类，通过radio按钮或checkbox实现点击触发 */
+.header input[type="checkbox"] {
+    display: none; /* 隐藏复选框 */
+}
+
+.header input[type="checkbox"]:checked + .content {
+    display: block; /* 当复选框被选中时，显示内容 */
+}
 			.time {
 
 				overflow: hidden;
@@ -167,7 +188,7 @@ flex-direction: column;
 
 	<body>
 
-		<!-- 添加带有鼠标悬停效果的 div 元素 -->
+<!-- 		<!-- 添加带有鼠标悬停效果的 div 元素 -->
 		<div class="header">
 		 2023年姨妈时间
 		  <div class="content">
@@ -191,9 +212,37 @@ flex-direction: column;
 			10.13<br/>
 			09.17<br/>
 		  </div>
-		</div>
+		</div> -->
 		
 
+		<div class="header">
+    <label for="toggleContent">点击我</label>
+    <input type="checkbox" id="toggleContent">
+    <div class="content">
+        <!-- 内容 -->
+	    11.01<br/>
+			10.02(01)<br/>
+			09.07<br/>
+			08.09<br/>
+			07.10<br/>
+			06.13<br/>
+			05.15<br/>
+			04.18<br/>
+			03.21<br/>
+			02.23<br/>
+			01.04<br/>
+    </div>
+</div>
+		<div class="header">
+    <label for="toggleContent">点击我</label>
+    <input type="checkbox" id="toggleContent">
+    <div class="content">
+        <!-- 内容 -->
+	    12.06<br/>
+			10.13<br/>
+			09.17<br/>
+    </div>
+</div>
 		<div class="time">
 
 			<h3>已经相识相知相恋</h3>
