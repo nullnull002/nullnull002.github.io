@@ -58,13 +58,20 @@
     padding: 12px;
     z-index: 1;
     color: black;
-   animation: fadeOut 10s forwards; /* 添加动画效果 */
+   opacity: 0; /* 初始透明度为 0 */
+    transition: opacity 1s; /* 添加淡入淡出过渡效果 */
+
 }
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-    }
-}
+
+			
+        .header.active .content {
+            display: block;
+            opacity: 1; /* 淡入效果 */
+        }
+
+        .fadeOut {
+            opacity: 0; /* 淡出效果 */
+        }
 			
 
 			.time {
@@ -245,6 +252,14 @@ flex-direction: column;
     function toggleContent(header) {
         // 切换 .active 类以控制显示/隐藏
         header.classList.toggle('active');
+	      // 如果 .active 类被添加，启动淡出效果
+        if (header.classList.contains('active')) {
+            setTimeout(function () {
+                header.classList.add('fadeOut');
+            }, 1000); // 在淡入效果结束后延迟 1000 毫秒启动淡出效果
+        } else {
+            header.classList.remove('fadeOut'); // 移除淡出效果
+        }
     }
 </script>
 		<div class="time">
