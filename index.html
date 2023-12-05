@@ -272,6 +272,10 @@ flex-direction: column;
 			<br/>
 			
 			<b>
+			<div id="residueYears" class="even"></div>
+
+			<div class="odd"> 年</div>
+
 			<div id="residueDays" class="even"></div>
 
 			<div class="odd"> 天</div>
@@ -291,8 +295,8 @@ flex-direction: column;
 			<br/>
 			<br/>
 			<br/>
-<!-- 			<h3>距离下次姨妈还有</h3> -->
-			<h3>姨妈期，这次提前了，要多休息，不开心就打老公</h3>
+			<h3>距离下次姨妈还有</h3>
+<!-- 			<h3>姨妈期，这次提前了，要多休息，不开心就打老公</h3> -->
 
 <br/>
 			
@@ -333,9 +337,9 @@ flex-direction: column;
 		// 倒计时截止时间
 
 		var EndTime = new Date('2021/12/06 00:00:00');
-		var EndTime2 = new Date('2023/12/26 00:00:00');
-		var EndTime3 = new Date('2023/11/27 00:00:00');
-
+		// var EndTime2 = new Date('2023/12/26 00:00:00');
+		// var EndTime3 = new Date('2023/11/27 00:00:00');
+		var EndTime2 = new Date('2024/01/03 00:00:00');
 		// 现在的事件
 
 		var NowTime = new Date();
@@ -355,7 +359,7 @@ flex-direction: column;
 		if(t >= 0) {
 
 			// 向下取整
-
+			y = Math.floor(t / 1000 / 60 / 60 / 24 /365);
 			d = Math.floor(t / 1000 / 60 / 60 / 24);
 
 			h = Math.floor(t / 1000 / 60 / 60 % 24);
@@ -367,8 +371,8 @@ flex-direction: column;
 		}
 
 
-	// var t2 =  EndTime2.getTime()  - NowTime.getTime() ;
-		var t2 =   NowTime.getTime() - EndTime3.getTime();
+	var t2 =  EndTime2.getTime()  - NowTime.getTime() ;
+		// var t2 =   NowTime.getTime() - EndTime3.getTime();
 
 		var d2 = 0;
 
@@ -399,7 +403,7 @@ flex-direction: column;
 			return num < 10 ? '0' + num : num;
 
 		}
-
+		$("#residueYears").html(y);
 		$("#residueDays").html(d);
 
 		$("#residueHours").html(toDouble(h));
