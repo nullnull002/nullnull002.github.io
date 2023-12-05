@@ -360,7 +360,7 @@ flex-direction: column;
 
 			// 向下取整
 			y = Math.floor(t / 1000 / 60 / 60 / 24 /365);
-			d = Math.floor(t / 1000 / 60 / 60 / 24);
+			d = Math.floor(t / 1000 / 60 / 60 / 24 % 365);
 
 			h = Math.floor(t / 1000 / 60 / 60 % 24);
 
