@@ -272,9 +272,9 @@ flex-direction: column;
 			<br/>
 			
 			<b>
-			<div id="residueYears" class="even"></div>
+<!-- 			<div id="residueYears" class="even"></div> -->
 
-			<div class="odd"> 年</div>
+<!-- 			<div class="odd"> 年</div> -->
 
 			<div id="residueDays" class="even"></div>
 
@@ -359,8 +359,8 @@ flex-direction: column;
 		if(t >= 0) {
 
 			// 向下取整
-			y = Math.floor(t / 1000 / 60 / 60 / 24 /365);
-			d = Math.floor(t / 1000 / 60 / 60 / 24 % 365);
+			// y = Math.floor(t / 1000 / 60 / 60 / 24 /365);
+			d = Math.floor(t / 1000 / 60 / 60 / 24);
 
 			h = Math.floor(t / 1000 / 60 / 60 % 24);
 
@@ -403,7 +403,7 @@ flex-direction: column;
 			return num < 10 ? '0' + num : num;
 
 		}
-		$("#residueYears").html(y);
+		// $("#residueYears").html(y);
 		$("#residueDays").html(d);
 
 		$("#residueHours").html(toDouble(h));
